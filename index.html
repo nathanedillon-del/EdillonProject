@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programming Projects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #181a1f;
+      color: #e6e9ef;
+      margin: 0;
+      padding: 25px;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #7cc4fa;
+      margin-top: 0;
+      margin-bottom: 18px;
+      font-size: 28px;
+    }
+
+    h2 {
+      color: #9ad2fc;
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 20px;
+    }
+
+    .nav {
+      margin-bottom: 20px;
+    }
+
+    .nav button {
+      background-color: #242830;
+      color: #e6e9ef;
+      border: 1px solid #3c4250;
+      padding: 8px 14px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .nav button:hover {
+      background-color: #2f3540;
+    }
+
+    .nav button.active {
+      background-color: #7cc4fa;
+      color: #111317;
+      border-color: #7cc4fa;
+      font-weight: bold;
+    }
+
+    .box {
+      background-color: #22252c;
+      border: 1px solid #383e4b;
+      border-radius: 6px;
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+
+    .menu-item {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background-color: #1b1e24;
+      border: 1px solid #383e4b;
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      color: #e6e9ef;
+      cursor: pointer;
+    }
+
+    .menu-item:hover {
+      border-color: #7cc4fa;
+      background-color: #262a33;
+    }
+
+    .menu-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #7cc4fa;
+      margin-bottom: 4px;
+    }
+
+    .menu-desc {
+      font-size: 14px;
+      color: #b5bcc9;
+    }
+
+    .row {
+      margin-bottom: 12px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #cfd6e3;
+    }
+
+    input, select {
+      width: 100%;
+      max-width: 340px;
+      padding: 8px 10px;
+      background-color: #15171c;
+      color: #e6e9ef;
+      border: 1px solid #444b5a;
+      border-radius: 4px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    .btn-main {
+      background-color: #7cc4fa;
+      color: #111317;
+      border: none;
+      padding: 9px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      margin-right: 8px;
+    }
+
+    .btn-main:hover {
+      background-color: #97d1fc;
+    }
+
+    .btn-clear {
+      background-color: #323742;
+      color: #e6e9ef;
+      border: 1px solid #495060;
+      padding: 9px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .btn-clear:hover {
+      background-color: #3e4452;
+    }
+
+    .btn-del {
+      background-color: #eb6f6f;
+      color: #111317;
+      border: none;
+      padding: 9px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .btn-del:hover {
+      background-color: #f28888;
+    }
+
+    .out {
+      margin-top: 14px;
+      padding: 12px;
+      background-color: #181a1f;
+      border: 1px solid #383e4b;
+      border-radius: 4px;
+      font-size: 14px;
+      display: none;
+    }
+
+    .err {
+      margin-top: 10px;
+      color: #ff9c9c;
+      font-size: 13px;
+      display: none;
+    }
+
+    .loop-res {
+      margin-top: 14px;
+    }
+
+    .loop-card {
+      background-color: #181a1f;
+      border: 1px solid #353b47;
+      border-radius: 4px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+
+    .loop-label {
+      font-size: 13px;
+      color: #9aa3b2;
+      margin-bottom: 4px;
+    }
+
+    .loop-val {
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffd166;
+      word-break: break-all;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    th, td {
+      border: 1px solid #383e4b;
+      padding: 8px 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #1b1e24;
+      color: #7cc4fa;
+    }
+
+    .highlight {
+      background-color: #363222;
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .footer {
+      margin-top: 28px;
+      padding-top: 14px;
+      border-top: 1px solid #2e333e;
+      text-align: center;
+      font-size: 13px;
+      color: #9aa3b2;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <button type="button" class="nav-btn active" data-page="home">Home</button>
+      <button type="button" class="nav-btn" data-page="conv">Unit Conversion</button>
+      <button type="button" class="nav-btn" data-page="tax">Income Tax</button>
+      <button type="button" class="nav-btn" data-page="loops">Factorial, Sum &amp; Avg</button>
+      <button type="button" class="nav-btn" data-page="payroll">Simple Payroll</button>
+    </div>
+
+    <!-- HOME -->
+    <div id="page-home" class="page active">
+      <h1>Programming Projects</h1>
+
+      <button type="button" class="menu-item" data-page="conv">
+        <div class="menu-title">Unit Conversion</div>
+        <div class="menu-desc">Celsius and Fahrenheit, meters and feet</div>
+      </button>
+
+      <button type="button" class="menu-item" data-page="tax">
+        <div class="menu-title">Income Tax Calculator</div>
+        <div class="menu-desc">Enter taxable income and get the tax from the bracket table</div>
+      </button>
+
+      <button type="button" class="menu-item" data-page="loops">
+        <div class="menu-title">Factorial, Sum and Average</div>
+        <div class="menu-desc">The first N natural numbers</div>
+      </button>
+
+      <button type="button" class="menu-item" data-page="payroll">
+        <div class="menu-title">Simple Payroll</div>
+        <div class="menu-desc">Add and delete employees in a payroll list with gross and net pay</div>
+      </button>
+    </div>
+
+    <!-- UNIT CONVERSION -->
+    <div id="page-conv" class="page">
+      <h1>Unit Conversion</h1>
+      <div class="box">
+        <div class="row">
+          <label for="cType">Conversion type</label>
+          <select id="cType">
+            <option value="c2f">Celsius to Fahrenheit</option>
+            <option value="f2c">Fahrenheit to Celsius</option>
+            <option value="m2ft">Meters to Feet</option>
+            <option value="ft2m">Feet to Meters</option>
+          </select>
+        </div>
+        <div class="row">
+          <label id="cLabel" for="cVal">Value in Celsius</label>
+          <input type="number" id="cVal" step="any" placeholder="Enter number" />
+        </div>
+        <button type="button" class="btn-main" id="cBtn">Convert</button>
+        <button type="button" class="btn-clear" id="cClear">Clear</button>
+        <div id="cOut" class="out"></div>
+      </div>
+    </div>
+
+    <!-- INCOME TAX -->
+    <div id="page-tax" class="page">
+      <h1>Income Tax Calculator</h1>
+      <div class="box">
+        <div class="row">
+          <label for="tIncome">Taxable income (P)</label>
+          <input type="number" id="tIncome" min="0" step="any" placeholder="e.g. 320000" />
+        </div>
+        <button type="button" class="btn-main" id="tBtn">Compute tax</button>
+        <button type="button" class="btn-clear" id="tClear">Clear</button>
+        <div id="tOut" class="out"></div>
+      </div>
+
+      <div class="box">
+        <h2>Tax table</h2>
+        <table id="tTable">
+          <thead>
+            <tr>
+              <th>Over</th>
+              <th>But not over</th>
+              <th>Basic tax + rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>-</td>
+              <td>P250,000</td>
+              <td>0%</td>
+            </tr>
+            <tr>
+              <td>P250,000</td>
+              <td>P400,000</td>
+              <td>20% of the excess over P250,000</td>
+            </tr>
+            <tr>
+              <td>P400,000</td>
+              <td>P800,000</td>
+              <td>P30,000 + 25% of the excess over P400,000</td>
+            </tr>
+            <tr>
+              <td>P800,000</td>
+              <td>P2,000,000</td>
+              <td>P130,000 + 30% of the excess over P800,000</td>
+            </tr>
+            <tr>
+              <td>P2,000,000</td>
+              <td>P8,000,000</td>
+              <td>P490,000 + 32% of the excess over P2,000,000</td>
+            </tr>
+            <tr>
+              <td>P8,000,000</td>
+              <td>-</td>
+              <td>P2,410,000 + 35% of the excess over P8,000,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- FACTORIAL, SUM AND AVERAGE -->
+    <div id="page-loops" class="page">
+      <h1>Factorial, Sum and Average</h1>
+      <div class="box">
+        <div class="row">
+          <label for="nInput">N (1 to 1000)</label>
+          <input type="number" id="nInput" min="1" max="1000" step="1" placeholder="e.g. 5" />
+        </div>
+        <button type="button" class="btn-main" id="nBtn">Calculate</button>
+        <button type="button" class="btn-clear" id="nClear">Clear</button>
+        <div id="nErr" class="err"></div>
+
+        <div class="loop-res">
+          <div class="loop-card">
+            <div class="loop-label">While loop - Factorial of N</div>
+            <div id="fRes" class="loop-val">-</div>
+          </div>
+          <div class="loop-card">
+            <div class="loop-label">Do while loop - Sum of first N natural numbers</div>
+            <div id="sRes" class="loop-val">-</div>
+          </div>
+          <div class="loop-card">
+            <div class="loop-label">For loop - Average of first N natural numbers</div>
+            <div id="aRes" class="loop-val">-</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIMPLE PAYROLL -->
+    <div id="page-payroll" class="page">
+      <h1>Simple Payroll</h1>
+      <div class="box">
+        <h2>Add an employee</h2>
+        <div class="row">
+          <label for="pName">Employee name</label>
+          <input type="text" id="pName" placeholder="Juan Dela Cruz" />
+        </div>
+        <div class="row">
+          <label for="pDays">Days worked</label>
+          <input type="number" id="pDays" min="0" step="any" placeholder="15" />
+        </div>
+        <div class="row">
+          <label for="pRate">Daily rate (P)</label>
+          <input type="number" id="pRate" min="0" step="any" placeholder="600" />
+        </div>
+        <div class="row">
+          <label for="pDed">Deduction amount (P)</label>
+          <input type="number" id="pDed" min="0" step="any" placeholder="500" />
+        </div>
+        <button type="button" class="btn-main" id="pAddBtn">Add employee</button>
+        <div id="pErr" class="err"></div>
+      </div>
+
+      <div class="box">
+        <h2>Payroll list</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Employee name</th>
+              <th>Days worked</th>
+              <th>Daily rate</th>
+              <th>Gross pay</th>
+              <th>Deduction amount</th>
+              <th>Net pay</th>
+            </tr>
+          </thead>
+          <tbody id="pBody">
+            <tr>
+              <td colspan="7" style="text-align:center; color:#9aa3b2;">No employees yet. Add one above.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="row" style="margin-top: 16px;">
+          <label for="pDelLine">Line number to delete</label>
+          <input type="number" id="pDelLine" min="1" step="1" placeholder="1" />
+        </div>
+        <button type="button" class="btn-del" id="pDelBtn">Delete line</button>
+        <div id="pDelErr" class="err"></div>
+      </div>
+    </div>
+
+    <footer class="footer">made by Jed Edillon (the goat)</footer>
+  </div>
+
+  <script>
+    // Page switcher
+    const navBtns = document.querySelectorAll('.nav-btn');
+    const pages = document.querySelectorAll('.page');
+
+    function openPage(name) {
+      pages.forEach(p => p.classList.remove('active'));
+      document.getElementById('page-' + name).classList.add('active');
+      navBtns.forEach(b => b.classList.toggle('active', b.dataset.page === name));
+      window.scrollTo(0, 0);
+    }
+
+    document.querySelectorAll('[data-page]').forEach(el => {
+      el.addEventListener('click', () => openPage(el.dataset.page));
+    });
+
+    // Unit Conversion
+    const cType = document.getElementById('cType');
+    const cLabel = document.getElementById('cLabel');
+    const cVal = document.getElementById('cVal');
+    const cOut = document.getElementById('cOut');
+
+    const labels = {
+      c2f: 'Value in Celsius',
+      f2c: 'Value in Fahrenheit',
+      m2ft: 'Value in Meters',
+      ft2m: 'Value in Feet'
+    };
+
+    cType.addEventListener('change', () => {
+      cLabel.textContent = labels[cType.value];
+      cOut.style.display = 'none';
+    });
+
+    document.getElementById('cBtn').addEventListener('click', () => {
+      const n = parseFloat(cVal.value);
+      if (isNaN(n)) {
+        cOut.textContent = 'Please enter a number.';
+        cOut.style.display = 'block';
+        return;
+      }
+      let ans = '';
+      if (cType.value === 'c2f') ans = `${n} C = ${((n * 9) / 5 + 32).toFixed(2)} F`;
+      if (cType.value === 'f2c') ans = `${n} F = ${(((n - 32) * 5) / 9).toFixed(2)} C`;
+      if (cType.value === 'm2ft') ans = `${n} m = ${(n * 3.28084).toFixed(2)} ft`;
+      if (cType.value === 'ft2m') ans = `${n} ft = ${(n / 3.28084).toFixed(2)} m`;
+      cOut.textContent = 'Result: ' + ans;
+      cOut.style.display = 'block';
+    });
+
+    document.getElementById('cClear').addEventListener('click', () => {
+      cVal.value = '';
+      cOut.style.display = 'none';
+    });
+
+    // Income Tax
+    const tIncome = document.getElementById('tIncome');
+    const tOut = document.getElementById('tOut');
+    const tRows = document.querySelectorAll('#tTable tbody tr');
+
+    function clearRowHighlight() {
+      tRows.forEach(r => r.classList.remove('highlight'));
+    }
+
+    document.getElementById('tBtn').addEventListener('click', () => {
+      const inc = parseFloat(tIncome.value);
+      clearRowHighlight();
+      if (isNaN(inc) || inc < 0) {
+        tOut.textContent = 'Enter a valid income (0 or higher).';
+        tOut.style.display = 'block';
+        return;
+      }
+
+      let tax = 0;
+      let idx = 0;
+
+      if (inc <= 250000) {
+        tax = 0;
+        idx = 0;
+      } else if (inc <= 400000) {
+        tax = (inc - 250000) * 0.20;
+        idx = 1;
+      } else if (inc <= 800000) {
+        tax = 30000 + (inc - 400000) * 0.25;
+        idx = 2;
+      } else if (inc <= 2000000) {
+        tax = 130000 + (inc - 800000) * 0.30;
+        idx = 3;
+      } else if (inc <= 8000000) {
+        tax = 490000 + (inc - 2000000) * 0.32;
+        idx = 4;
+      } else {
+        tax = 2410000 + (inc - 8000000) * 0.35;
+        idx = 5;
+      }
+
+      tRows[idx].classList.add('highlight');
+      tOut.textContent = 'Income Tax: P' + tax.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      tOut.style.display = 'block';
+    });
+
+    document.getElementById('tClear').addEventListener('click', () => {
+      tIncome.value = '';
+      tOut.style.display = 'none';
+      clearRowHighlight();
+    });
+
+    // Factorial, Sum and Average
+    const nInput = document.getElementById('nInput');
+    const nErr = document.getElementById('nErr');
+
+    document.getElementById('nBtn').addEventListener('click', () => {
+      const n = Number(nInput.value);
+      if (!Number.isInteger(n) || n < 1 || n > 1000) {
+        nErr.textContent = 'Please enter a whole number from 1 to 1000.';
+        nErr.style.display = 'block';
+        return;
+      }
+      nErr.style.display = 'none';
+
+      // while loop for factorial
+      let fact = 1n;
+      let w = 1n;
+      while (w <= BigInt(n)) {
+        fact = fact * w;
+        w++;
+      }
+
+      // do while loop for sum
+      let sum = 0;
+      let d = 1;
+      do {
+        sum += d;
+        d++;
+      } while (d <= n);
+
+      // for loop for average
+      let total = 0;
+      for (let f = 1; f <= n; f++) {
+        total += f;
+      }
+      const avg = total / n;
+
+      document.getElementById('fRes').textContent = fact.toString();
+      document.getElementById('sRes').textContent = sum.toString();
+      document.getElementById('aRes').textContent = avg.toFixed(2);
+    });
+
+    document.getElementById('nClear').addEventListener('click', () => {
+      nInput.value = '';
+      nErr.style.display = 'none';
+      document.getElementById('fRes').textContent = '-';
+      document.getElementById('sRes').textContent = '-';
+      document.getElementById('aRes').textContent = '-';
+    });
+
+    // Simple Payroll
+    let list = [];
+    const pBody = document.getElementById('pBody');
+    const pErr = document.getElementById('pErr');
+    const pDelErr = document.getElementById('pDelErr');
+
+    function drawPayroll() {
+      if (list.length === 0) {
+        pBody.innerHTML = '<tr><td colspan="7" style="text-align:center; color:#9aa3b2;">No employees yet. Add one above.</td></tr>';
+        return;
+      }
+      pBody.innerHTML = '';
+      list.forEach((emp, i) => {
+        const gross = emp.days * emp.rate;
+        const net = gross - emp.ded;
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${i + 1}</td>
+          <td>${emp.name}</td>
+          <td>${emp.days}</td>
+          <td>${emp.rate.toFixed(2)}</td>
+          <td>${gross.toFixed(2)}</td>
+          <td>${emp.ded.toFixed(2)}</td>
+          <td>${net.toFixed(2)}</td>
+        `;
+        pBody.appendChild(tr);
+      });
+    }
+
+    document.getElementById('pAddBtn').addEventListener('click', () => {
+      const name = document.getElementById('pName').value.trim();
+      const days = parseFloat(document.getElementById('pDays').value);
+      const rate = parseFloat(document.getElementById('pRate').value);
+      const dedRaw = document.getElementById('pDed').value.trim();
+      const ded = dedRaw === '' ? 0 : parseFloat(dedRaw);
+
+      pErr.style.display = 'none';
+
+      if (!name) {
+        pErr.textContent = 'Please enter an employee name.';
+        pErr.style.display = 'block';
+        return;
+      }
+      if (isNaN(days) || days < 0 || isNaN(rate) || rate < 0 || isNaN(ded) || ded < 0) {
+        pErr.textContent = 'Enter valid positive numbers for days, rate, and deduction.';
+        pErr.style.display = 'block';
+        return;
+      }
+
+      list.push({ name, days, rate, ded });
+      drawPayroll();
+
+      document.getElementById('pName').value = '';
+      document.getElementById('pDays').value = '';
+      document.getElementById('pRate').value = '';
+      document.getElementById('pDed').value = '';
+    });
+
+    document.getElementById('pDelBtn').addEventListener('click', () => {
+      const line = Number(document.getElementById('pDelLine').value);
+      pDelErr.style.display = 'none';
+
+      if (list.length === 0) {
+        pDelErr.textContent = 'List is empty.';
+        pDelErr.style.display = 'block';
+        return;
+      }
+      if (!Number.isInteger(line) || line < 1 || line > list.length) {
+        pDelErr.textContent = `Enter a line number between 1 and ${list.length}.`;
+        pDelErr.style.display = 'block';
+        return;
+      }
+
+      list.splice(line - 1, 1);
+      drawPayroll();
+      document.getElementById('pDelLine').value = '';
+    });
+  </script>
+</body>
+</html>
